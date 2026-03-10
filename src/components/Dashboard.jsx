@@ -3,8 +3,8 @@
 // Props: state — 'empty' | 'wave1' | 'wave2' | 'wave3'
 //
 // Dashboard bounds (used by ConnectionPath endpoint targeting in App.jsx):
-//   left:310  right:970  top:157  contentTop:193  bottom:564
-//   width:660  contentHeight:~371 (16:9)
+//   left:160  right:1120  top:145  contentTop:181
+//   width:960
 
 import { motion, AnimatePresence } from 'motion/react'
 
@@ -16,7 +16,7 @@ const STATE_IMAGES = {
 }
 
 // Highlight ring canvas-absolute positions.
-// Dashboard left=310, contentTop=193
+// Dashboard left=160, contentTop=181
 // Rings indicate where new content appeared in the image.
 const RINGS = {
   wave1: [
@@ -51,8 +51,8 @@ function HighlightRing({ x, y }) {
       transition={{ duration: 0.7, ease: 'easeOut' }}
       style={{
         position: 'absolute',
-        left: x - 310 - 40,
-        top:  y - 157 - 40,
+        left: x - 160 - 40,
+        top:  y - 145 - 40,
         width: 80, height: 80,
         borderRadius: '50%',
         border: '2px solid rgba(255,255,255,0.85)',
@@ -82,16 +82,16 @@ export default function Dashboard({ state = 'empty' }) {
   const rings = RINGS[state]
 
   return (
-    // Centered: left=(1280-720)/2=280, top=(720-407)/2≈157
+    // Centered: left=(1280-960)/2=160, top=145
     <motion.div
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 180, damping: 22 }}
       style={{
         position: 'absolute',
-        left: 280,
-        top: 157,
-        width: 720,
+        left: 160,
+        top: 145,
+        width: 960,
         willChange: 'transform',
       }}
     >
@@ -135,7 +135,7 @@ export default function Dashboard({ state = 'empty' }) {
               style={{
                 display: 'block',
                 width: '100%',
-                height: 'auto',       // natural height — no cropping
+                height: 'auto',
               }}
             />
           </AnimatePresence>

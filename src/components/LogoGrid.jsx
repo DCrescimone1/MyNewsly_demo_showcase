@@ -13,16 +13,18 @@ import { useEffect, useState } from 'react'
 // Order = stagger order (left col top→bottom, top row, right col top→bottom, bottom row)
 const SOURCES = [
   // Left column (x=20, right edge at x=110)
-  { id: 'gmail',      label: 'Gmail',          src: '/logos/official-gmail-icon-2020-.svg',  x: 20,   y: 80  },
+  { id: 'guardian',   label: 'The Guardian',    src: '/logos/the-guardian-new-2018.svg',      x: 20,   y: 80  },
   { id: 'reuters',    label: 'Reuters',         src: '/logos/reuters-6.svg',                  x: 20,   y: 215 },
   { id: 'wired',      label: 'Wired',           src: '/logos/wired.svg',                      x: 20,   y: 350 },
   { id: 'forbes',     label: 'Forbes',          src: '/logos/forbes-2.svg',                   x: 20,   y: 480 },
   // Top row (y=20, bottom edge at y=80)
   { id: 'bbc',        label: 'BBC',             src: '/logos/bbc-2.svg',                      x: 195,  y: 20,  logoSize: { w: 98, h: 70 } },
-  { id: 'techcrunch', label: 'TechCrunch',      src: '/logos/techchrunch.svg',                x: 595,  y: 20  },
-  { id: 'natgeo',     label: 'Nat Geo',         src: '/logos/national-geographic-channel.svg',x: 995,  y: 20  },
+  { id: 'cnn',        label: 'CNN',              src: '/logos/cnn-3.svg',                      x: 395,  y: 20  },
+  { id: 'techcrunch', label: 'TechCrunch',      src: '/logos/techchrunch.svg',                x: 545,  y: 20  },
+  { id: 'vogue',      label: 'Vogue',           src: '/logos/vogue.svg',                      x: 695,  y: 20  },
+  { id: 'natgeo',     label: 'Nat Geo',         src: '/logos/national-geographic-channel.svg',x: 895,  y: 20  },
   // Right column (x=1170, left edge at x=1170)
-  { id: 'outlook',    label: 'Outlook',         src: '/logos/outlook-icon.svg',               x: 1170, y: 80  },
+  { id: 'economist',  label: 'The Economist',   src: '/logos/the economist_logo.svg',         x: 1170, y: 80  },
   { id: 'nyt',        label: 'NYT',             src: '/logos/the-new-york-times.svg',         x: 1170, y: 215, logoSize: { w: 118, h: 88 } },
   { id: 'adobepdf',   label: 'Adobe PDF',       src: '/logos/adobe-pdf-icon.svg',             x: 1170, y: 350 },
   { id: 'wsj',        label: 'WSJ',             src: '/logos/the-wall-street-journal-1.svg',  x: 1170, y: 480, logoSize: { w: 86, h: 56 } },
